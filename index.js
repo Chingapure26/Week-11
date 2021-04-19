@@ -1,6 +1,7 @@
 const express = require ('express');
 const cors = require('cors')
 const app =express();
+app.use(express.json());
 app.use(cors());
 const port = 4000;
 
@@ -18,7 +19,7 @@ function handleRegister(req,res){
     
 }
 
-function handleLogin (){
+function handleLogin (req,res){
     
     const UserLogin = {
         email: req.body.email,
@@ -28,7 +29,7 @@ function handleLogin (){
         console.log("ok");
         return res.json({result:'User data found successfully'});
     }else{
-        return res.status(400).json({message:'User data does not found'});
+        return res.json({message:'User data does not found'});
     }
 }
 
