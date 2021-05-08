@@ -4,6 +4,7 @@ const app =express();
 app.use(express.json());
 app.use(cors());
 const port = 4000;
+app.use(express.static('public'));
 
 app.post('/register', handleRegister)
   

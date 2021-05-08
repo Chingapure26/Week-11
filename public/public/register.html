@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" >
+    <title>Register</title>
+</head>
+<body>
+    <form class="formulario">
+        <Label class="ltext" for= "fname">Full Name</Label>
+        <input type="text" class="field" id="nombre" required>
+        <div id="valid-name"> </div>
+    
+        <Label class="ltext"for= "mail">E mail</Label>
+        <input type="email"  class="field" id="email" required> 
+        <div id="valid-mail"> </div>
+    
+        <Label class="ltext" for= "pass">Pasword</Label>
+        <input type="password" class="field" id="password">
+        <div id="valid-pass"> </div>
+        
+        <Label class="ltext" for= "ppass">Confirm Pasword</Label>
+        <input type="password" class="field" id="conf-pass" required> 
+        <div id="valid-confP"> </div>
+
+        <a href="login.html"> Log in </a>
+
+        <p class="center-content">
+            <input  type= "submit" class="btn" id="btn_send" value="Send">
+        </p>
+
+        <p class="center-content">
+            <input  type="reset" class="btn" id="btn_reset"  value="Reset Form">
+        </p>
+    </form>
+
+    <div id="error" class="err">
+        <ul id="lists"></ul>
+    </div>
+    <script src="js/validations-register.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>
