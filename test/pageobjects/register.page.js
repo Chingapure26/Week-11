@@ -1,32 +1,25 @@
-const Page = require('./page');
+const Page=require('../pageobjects/page') 
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () { return $('#username') }
-    get inputPassword () { return $('#password') }
-    get btnSubmit () { return $('button[type="submit"]') }
+class RegisterPage extends Page {
+    get UserName() { return $('#nombre')}
+    get UserMail() { return $('#email')}
+    get UserPass() { return $('#password')}
+    get SubmitBtn() { return $('input[type="submit"]') }
+    get redirectLink() { return $('a') }
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    async login (username, password) {
-        await (await this.inputUsername).setValue(username);
-        await (await this.inputPassword).setValue(password);
-        await (await this.btnSubmit).click();
-    }
+    get ErrorsUser() { return $('#valid-name') }
+    get ErrorsMail() { return $('#valid-mail') }
+    get ErrorsPass() { return $('#valid-pass') }
 
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
     open () {
-        return super.open('login');
+        return super.open('register');
     }
+    
+    submit() {
+        this.SubmitBtn.click();
+    }
+
+    
 }
 
-module.exports = new LoginPage();
+module.exports = new RegisterPage();
